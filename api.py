@@ -5,6 +5,7 @@ import PIL
 from PIL import Image
 import datetime
 import the_best_chatbot as bot
+import os
 
 app = Flask(__name__)
 model = None
@@ -57,4 +58,4 @@ def message_api():
   return resp
 
 if __name__ == "__main__":
-  app.run()
+  app.run(host='0.0.0.0',port=int(os.getenv('PORT')), debug=True)
